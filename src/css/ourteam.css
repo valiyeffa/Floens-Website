@@ -1,0 +1,169 @@
+main {
+    .our-team {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #F2EEEA;
+
+        .services-sect {
+            padding-top: 100px;
+            padding-bottom: 20px;
+            width: 80%;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.193);
+            margin-bottom: 100px;
+
+            .services-sect-header {
+                width: 100%;
+                align-items: center;
+
+                .left-mini-sect-title {
+                    width: 9%;
+                }
+
+                .right-mini-text {
+                    width: 40%;
+
+                    p {
+                        color: grey;
+                    }
+                }
+            }
+
+        }
+
+        .container-fluid {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 70px;
+
+            .row {
+                row-gap: 20px;
+                width: 100%;
+
+                .team-card {
+                    position: relative;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .team-media {
+                        opacity: 0;
+                        position: absolute;
+                        z-index: 3;
+                        transition: all 0.4s ease;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        padding: 15px;
+
+                        a {
+                            border: 1px solid;
+                            text-decoration: none;
+                            color: white;
+                            padding: 8px;
+                            text-align: center;
+                            transition: 0.4s;
+
+                            i {
+                                font-size: 17px;
+                            }
+
+                            &:hover {
+                                background-color: #C7844F;
+                                border-color: #C7844F;
+                            }
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        opacity: 0;
+                        left: 0;
+                        transition: all 0.4s ease;
+
+                    }
+
+                    &:hover::after {
+                        opacity: 0.4;
+                    }
+
+                    &:hover {
+
+                        .team-media,
+                        .team-names {
+                            opacity: 1;
+                        }
+                    }
+
+                    .team-names {
+                        opacity: 0;
+                        z-index: 3;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        background-color: #C7844F;
+                        color: white;
+                        padding: 18px 85px 5px 25px;
+                        transition: 0.4s;
+
+                        b {
+                            border-left: 7px solid white;
+                            font-size: 18px;
+                            padding-left: 10px;
+
+                        }
+
+                        p {
+                            font-size: 12px;
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        .our-team {
+        
+            .services-sect {
+                flex-direction: column;
+
+                .services-sect-header {
+                    width: 100%;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    .left-mini-sect-title {
+                        width: 38%;
+                        
+                    }
+
+                    .services-sect-title{
+                        width: 62%;
+                    }
+
+                    .right-mini-text {
+                        padding: 15px;
+                        width: 60%;
+                    }
+                }
+
+            }
+
+
+        }
+    }
+}
